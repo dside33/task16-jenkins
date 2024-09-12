@@ -16,7 +16,8 @@ pipeline {
         
         stage('Build Docker Image') {
             steps {
-                 sh "docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${env.BUILD_NUMBER} -f Dockerfile.nginx ."
+                sh "docker build -t ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:14 -f Dockerfile.nginx ."
+                echo 'FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF'
             }
         }
     }
