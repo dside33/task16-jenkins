@@ -36,6 +36,14 @@ pipeline {
             }
         }
 
+        stage('Ansible Deploy') {
+            steps {
+                sh """
+                ansible-playbook -i ./ansible/hosts ./ansible/playbook.yml --extra-vars "docker_image_tag=${env.BUILD_NUMBER}"
+                """
+            }
+        }
+
         stage('Hello') {
             steps {
                 echo 'Hello World add lol'
