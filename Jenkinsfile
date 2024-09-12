@@ -32,7 +32,7 @@ pipeline {
         
         stage('Push') {
             steps {
-                sh 'docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${env.BUILD_NUMBER}'
+                sh "docker push ${DOCKER_REGISTRY}/${DOCKER_IMAGE}:${env.BUILD_NUMBER}"
             }
         }
 
