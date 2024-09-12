@@ -1,9 +1,15 @@
 pipeline {
-    agent none
+    agent { label 'ubuntu' }
+
+    stages {
+        stage('Checkout') {
+            steps {
+                checkout scm
+            }
+        }
 
     stages {
         stage('Hello') {
-            agent { label 'ubuntu' }
             steps {
                 echo 'Hello World add lol'
             }
