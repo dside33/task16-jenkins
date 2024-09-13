@@ -39,7 +39,7 @@ pipeline {
         stage('Ansible Deploy') {
             steps {
                 sh """
-                ansible-playbook -i ./ansible/hosts ./ansible/playbook.yml --extra-vars "docker_image_tag=${env.BUILD_NUMBER}"
+                ansible-playbook -i /home/ubuntu/jenkins/workspace/task15-ansible/hosts /home/ubuntu/jenkins/workspace/task15-ansible/playbook.yml --extra-vars "docker_image_tag=${env.BUILD_NUMBER}"
                 """
             }
         }
